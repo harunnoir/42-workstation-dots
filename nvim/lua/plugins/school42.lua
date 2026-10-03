@@ -68,16 +68,16 @@ return {
         'Diogo-ss/42-header.nvim',
         enabled = enabled,
         cmd = { 'Stdheader', 'Format42', 'Check42' },
-        opts = {
-            -- Keys stay in `config/keymaps.lua`; the plugin's own defaults would
-            -- duplicate them.
-            default_map = false,
-            -- The header follows the filename, so a renamed file is fixed up
-            -- instead of keeping a header that no longer matches.
-            auto_update = true,
-            user = 'abait-el',
-            mail = 'abait-el@student.1337.ma',
-        },
+opts = {
+                -- Keys stay in `config/keymaps.lua`; the plugin's own defaults would
+                -- duplicate them.
+                default_map = false,
+                -- The header follows the filename, so a renamed file is fixed up
+                -- instead of keeping a header that no longer matches.
+                auto_update = true,
+                user = 'your-username',
+                mail = 'your-email@example.com',
+            },
         config = function(_, opts)
             require('42header').setup(opts)
             vim.api.nvim_create_user_command('Format42', format42, { desc = 'Format the current file to 42 norm' })
