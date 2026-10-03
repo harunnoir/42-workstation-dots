@@ -60,6 +60,74 @@ cf() {
     echo "Copied $1 to clipboard"
 }
 
+# Create directory and cd into it
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Extract various archive formats
+extract() {
+    if [[ -f "$1" ]]; then
+        case "$1" in
+            *.tar.bz2)   tar xjf "$1"   ;;
+            *.tar.gz)    tar xzf "$1"   ;;
+            *.bz2)       bunzip2 "$1"   ;;
+            *.rar)       unrar x "$1"   ;;
+            *.gz)        gunzip "$1"    ;;
+            *.tar)       tar xf "$1"    ;;
+            *.tbz2)      tar xjf "$1"   ;;
+            *.tgz)       tar xzf "$1"   ;;
+            *.zip)       unzip "$1"     ;;
+            *.Z)         uncompress "$1";;
+            *.7z)        7z x "$1"      ;;
+            *)           echo "Unknown archive: $1" ;;
+        esac
+    else
+        echo "File not found: $1"
+    fi
+}
+
+# Find file by name
+ff() {
+    find . -type f -name "*$1*" 2>/dev/null
+}
+
+# Grep with context and line numbers
+rgf() {
+    rg -n -C 2 "$1" "${2:-.}"
+}
+
+# Kill process by name
+kl() {
+    pkill -f "$1"
+}
+
+# Show disk usage of current directory
+duh() {
+    du -h --max-depth=1 | sort -hr
+}
+
+# Quick HTTP server
+serve() {
+    python3 -m http.server "${1:-8000}"
+}
+
+# Weather
+wttr() {
+    curl "wttr.in/${1:-}"
+}
+
+# Git root
+gr() {
+    git rev-parse --show-toplevel 2>/dev/null || echo "Not a git repo"
+}
+
+# Copy current directory path
+cpwd() {
+    pwd | tr -d '\n' | xclip -selection clipboard
+    echo "Copied $(pwd) to clipboard"
+}
+
 
 export OPENAI_API_KEY=""
 
