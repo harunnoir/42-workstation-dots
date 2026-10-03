@@ -46,6 +46,20 @@ alias oc='opencode'
 # Reload config
 alias reload='source ~/.bashrc'
 
+# Copy file contents to clipboard
+cf() {
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: cf <file>"
+        return 1
+    fi
+    if [[ ! -f "$1" ]]; then
+        echo "File not found: $1"
+        return 1
+    fi
+    cat "$1" | xclip -selection clipboard
+    echo "Copied $1 to clipboard"
+}
+
 
 export OPENAI_API_KEY=""
 
