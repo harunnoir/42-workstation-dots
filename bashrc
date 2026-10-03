@@ -131,23 +131,22 @@ cpwd() {
 
 export OPENAI_API_KEY=""
 
-# User info (set your own)
-# export USER='your-username'
-# export MAIL='your-email@example.com'
+export USER='abait-el'
+export MAIL='abait-el@student.1337.ma'
 
 # uv
-mkdir -p "$HOME/.local/share/uv/.venv" \
-         "$HOME/.local/share/uv/.cache/uv" \
-         "$HOME/.local/share/uv/python"
+mkdir -p "$HOME/goinfre/.venv" \
+         "$HOME/goinfre/.cache/uv" \
+         "$HOME/goinfre/python"
 
-export UV_PROJECT_ENVIRONMENT="$HOME/.local/share/uv/.venv"
-export UV_CACHE_DIR="$HOME/.local/share/uv/.cache/uv"
-export UV_PYTHON_INSTALL_DIR="$HOME/.local/share/uv/python"
+export UV_PROJECT_ENVIRONMENT="$HOME/goinfre/.venv"
+export UV_CACHE_DIR="$HOME/goinfre/.cache/uv"
+export UV_PYTHON_INSTALL_DIR="$HOME/goinfre/python"
 
 # Hugging Face
-mkdir -p "$HOME/.cache/huggingface"
+mkdir -p "$HOME/goinfre/.cache/huggingface"
 
-export HF_HOME="$HOME/.cache/huggingface"
+export HF_HOME="$HOME/goinfre/.cache/huggingface"
 
 
 

@@ -75,8 +75,8 @@ opts = {
                 -- The header follows the filename, so a renamed file is fixed up
                 -- instead of keeping a header that no longer matches.
                 auto_update = true,
-                user = 'your-username',
-                mail = 'your-email@example.com',
+                user = 'abait-el',
+                mail = 'abait-el@student.1337.ma',
             },
         config = function(_, opts)
             require('42header').setup(opts)
