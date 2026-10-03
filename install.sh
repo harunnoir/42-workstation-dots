@@ -21,5 +21,6 @@ link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 link "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
 
 link "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+link "$DOTFILES_DIR/bashrc" "$HOME/.bashrc"
 
 echo "Done! Restart your terminal or run 'tmux source ~/.tmux.conf' if tmux is running."
